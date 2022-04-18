@@ -18,23 +18,34 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "compose:dev": "docker-compose up --build --abort-on-container-exit",
+    "compose:dev:bash": "docker-compose exec xyz-be bash",
+    "typeorm:schema": "yarn typeorm schema:log",
+    "typeorm:migration:create": "yarn typeorm migration:create",
+    "typeorm:migrate": "yarn typeorm migration:run",
+    "typeorm:migrate:revert": "yarn typeorm migration:revert",
+    "typeorm": "typeorm --config build/src/config/ormconfig.js"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^2.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/mapped-types": "*",
     "@nestjs/passport": "^8.2.1",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/swagger": "^5.2.1",
+    "@nestjs/typeorm": "^8.0.3",
     "@types/passport-local": "^1.0.34",
     "dotenv": "^16.0.0",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
+    "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "swagger-ui-express": "^4.3.0"
+    "swagger-ui-express": "^4.3.0",
+    "typeorm": "^0.3.6"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",

@@ -1,5 +1,7 @@
-interface User {
-  userId?: number;
-  username?: string;
+interface IUser {
+  id?: number;
+  name?: string;
   password?: string;
+  role?: string;
+  isActive?: string;
 }
